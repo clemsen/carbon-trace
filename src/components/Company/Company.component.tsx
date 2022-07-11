@@ -1,14 +1,15 @@
 import Alternatives from "./Alternatives";
 import CompanyHeader from "./CompanyHeader";
 import CompanyInformation from "./CompanyInformation";
+import StyleCompany from "./Company.style";
 
 const Company = () => {
   return (
-    <div className="company">
+    <StyleCompany className="company">
       <CompanyHeader />
       <CompanyInformation />
       <Alternatives />
-    </div>
+    </StyleCompany>
   );
 };
 

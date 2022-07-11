@@ -1,10 +1,11 @@
+import StyleHeader from "./Header.style";
+
 const Header = () => {
   return (
-    <header className="App-header">
-      <>{console.log("blabla")}</>
+    <StyleHeader className="App-header">
       <div className="Logo">Logo</div>
       <div className="header-menu">Menu</div>
-    </header>
+    </StyleHeader>
   );
 };
 

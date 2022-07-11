@@ -1,6 +1,8 @@
+import StyleCompanyInformation from "./CompanyInformation.style";
+
 const CompanyInformation = () => {
   return (
-    <div className="company-information">
+    <StyleCompanyInformation className="company-information">
       <div className="carbon-tracability-index">
         <div className="scope1">Scope 1</div>
         <div className="scope2">Scope 2</div>
@@ -12,7 +14,7 @@ const CompanyInformation = () => {
           Carbone par € estimé bilan carbone
         </div>
       </div>
-    </div>
+    </StyleCompanyInformation>
   );
 };
 

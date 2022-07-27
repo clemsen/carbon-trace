@@ -1,36 +1,24 @@
+import { CompanyInfoType } from "../Companies.component";
 import StyleCompanyItem from "./CompanyItem.style";
 
-type PropsType = {
-  name: string;
-};
+interface PropsType {
+  companyInfo: CompanyInfoType;
+}
 
-const companiesInfo: Record<string, any> = {
-  LVMH: {
-    logo: process.env.PUBLIC_URL + "/images/LVMH.png",
-    itc: "4%",
-  },
-  Danone: {
-    logo: process.env.PUBLIC_URL + "/images/Danone.png",
-    itc: "8%",
-  },
-};
-
-const CompanyItem = ({ name }: PropsType) => {
+const CompanyItem = ({ companyInfo }: PropsType) => {
   return (
     <>
-      {companiesInfo[name] && (
+      {companyInfo.name && (
         <StyleCompanyItem className="company-item">
           <div className="company-item-name-logo">
             <img
               className="company-item-logo"
-              src={companiesInfo[name].logo}
-              alt={"logo " + name}
+              src={"/images/" + companyInfo.name + ".png"}
+              alt={"logo " + companyInfo.name}
             />
-            <div className="company-item-name">{name}</div>
+            <div className="company-item-name">{companyInfo.name}</div>
           </div>
-          <div className="company-item-information">
-            {companiesInfo[name].itc}
-          </div>
+          <div className="company-item-information">{companyInfo.itc}</div>
         </StyleCompanyItem>
       )}
     </>

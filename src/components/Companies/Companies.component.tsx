@@ -3,16 +3,27 @@ import CompanyItem from "./CompanyItem";
 import CompanyItemsTitle from "./CompanyItemsTitle";
 import LateralMenu from "./LateralMenu";
 
-const companyNames: string[] = ["LVMH", "Danone", "Bouygues"];
+export type CompanyInfoType = { name: string; itc: string };
+
+const companiesInfo: CompanyInfoType[] = [
+  {
+    name: "LVMH",
+    itc: "4%",
+  },
+  {
+    name: "Danone",
+    itc: "8%",
+  },
+];
 
 const Companies = () => {
   return (
-    <StyleCompanies className="companies">
+    <StyleCompanies>
       <div className="company-items">
         <h1>Entreprises</h1>
         <CompanyItemsTitle />
-        {companyNames.map((companyName: string) => (
-          <CompanyItem name={companyName} />
+        {companiesInfo.map((companyInfo: CompanyInfoType) => (
+          <CompanyItem companyInfo={companyInfo} />
         ))}
       </div>
       <LateralMenu />

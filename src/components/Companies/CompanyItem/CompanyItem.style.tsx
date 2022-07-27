@@ -5,7 +5,6 @@ const StyleCompanyItem = styled.div`
   grid-template-columns: 50% 50%;
   width: 100%;
   padding: 10px;
-  margin-bottom: 10px;
   box-shadow: 0 2px 4px rgb(0 0 0 / 16%);
   border-radius: 5px;
   font-size: 20px;

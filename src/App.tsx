@@ -1,4 +1,4 @@
-import Company from "./components/Company";
+import Companies from "./components/Companies";
 import Header from "./components/Header";
 import StyleApp from "./App.style";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -10,7 +10,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<>Insert homepage here</>}></Route>
-          <Route path="/companies" element={<Company />} />
+          <Route path="/companies" element={<Companies />} />
         </Routes>
       </BrowserRouter>
     </StyleApp>

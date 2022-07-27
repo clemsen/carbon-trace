@@ -5,10 +5,16 @@ const StyleHeader = styled("div")`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  margin: 0px 70px 0px 70px;
+`;
+
+const StyleHeaderWrapper = styled("div")`
+  width: 100%;
   background-color: #ffffff;
   position: sticky;
   box-shadow: 0 1px 3px #a5a5a5;
+  padding: 20px;
+  margin-bottom: 20px;
 `;
 
-export default StyleHeader;
+export { StyleHeader, StyleHeaderWrapper };

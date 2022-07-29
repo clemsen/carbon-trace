@@ -1,10 +1,14 @@
 import StyleCompanyHeader from "./CompanyHeader.style";
 
-const CompanyHeader = () => {
+interface PropsType {
+  name?: string;
+}
+
+const CompanyHeader = ({ name }: PropsType) => {
   return (
     <StyleCompanyHeader className="company-header">
       <div className="company-logo">Logo Entreprise </div>
-      <div className="company-name">Nom Entreprise</div>
+      <div className="company-name">{name}</div>
     </StyleCompanyHeader>
   );
 };

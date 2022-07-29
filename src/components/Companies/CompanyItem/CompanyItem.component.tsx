@@ -1,4 +1,4 @@
-import { CompanyInfoType } from "../Companies.component";
+import { CompanyInfoType } from "../../../constants";
 import StyleCompanyItem from "./CompanyItem.style";
 
 interface PropsType {
@@ -9,7 +9,9 @@ const CompanyItem = ({ companyInfo }: PropsType) => {
   return (
     <>
       {companyInfo.name && (
-        <StyleCompanyItem className="company-item">
+        <StyleCompanyItem
+          to={{ pathname: "/company/" + companyInfo.name.toLowerCase() }}
+        >
           <div className="company-item-name-logo">
             <img
               className="company-item-logo"

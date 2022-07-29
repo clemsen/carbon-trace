@@ -1,8 +1,8 @@
-import StyleCompanyItem from "../CompanyItem/CompanyItem.style";
+import StyleCompanyItem from "./CompanyItemsTitle.style";
 
 const CompanyItem = () => {
   return (
-    <StyleCompanyItem className="company-items-title">
+    <StyleCompanyItem>
       <div className="company-item-name-logo company-items-title">
         Entreprise
       </div>

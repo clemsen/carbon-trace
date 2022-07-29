@@ -8,7 +8,7 @@ const LateralMenu = () => {
       <h3>Rechercher une entreprise</h3>
       <div className="side-search-bar">
         <TextField label="Recherche" variant="outlined" />
-        <Button variant="contained">Text</Button>
+        <Button className="lateral-search-button" variant="contained" />
       </div>
     </StyleLateralMenu>
   );

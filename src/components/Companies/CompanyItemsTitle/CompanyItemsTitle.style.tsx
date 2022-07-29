@@ -1,9 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const StyleCompanyItem = styled(Link)`
-  text-decoration: none;
-  color: #000000;
+const StyleCompanyItem = styled.div`
   display: grid;
   grid-template-columns: 50% 50%;
   width: 100%;
@@ -26,12 +24,6 @@ const StyleCompanyItem = styled(Link)`
     display: flexbox;
     align-items: center;
     justify-content: center;
-  }
-
-  .company-item-logo {
-    width: 60px;
-    height: 60px;
-    margin-right: 40px;
   }
 `;
 

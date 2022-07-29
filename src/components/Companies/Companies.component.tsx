@@ -1,20 +1,8 @@
+import { companiesInfo, CompanyInfoType } from "../../constants";
 import StyleCompanies from "./Companies.style";
 import CompanyItem from "./CompanyItem";
 import CompanyItemsTitle from "./CompanyItemsTitle";
 import LateralMenu from "./LateralMenu";
-
-export type CompanyInfoType = { name: string; itc: string };
-
-const companiesInfo: CompanyInfoType[] = [
-  {
-    name: "LVMH",
-    itc: "4%",
-  },
-  {
-    name: "Danone",
-    itc: "8%",
-  },
-];
 
 const Companies = () => {
   return (

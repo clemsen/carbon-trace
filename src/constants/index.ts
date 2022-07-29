@@ -1,3 +1,16 @@
+export type CompanyInfoType = { name: string; itc: string };
+
+export const companiesInfo: CompanyInfoType[] = [
+  {
+    name: "LVMH",
+    itc: "4%",
+  },
+  {
+    name: "Danone",
+    itc: "8%",
+  },
+];
+
 export const SCOPE_1_2 = {
   LVMH: "4%",
   TotalEnergies: ">90%",

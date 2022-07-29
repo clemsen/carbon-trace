@@ -21,6 +21,13 @@ const StyleLateralMenu = styled.div`
     min-width: 30px;
     width: 50px;
     box-shadow: none;
+    :hover {
+      background-color: #31ba5c;
+    }
+  }
+
+  & .MuiTouchRipple-root {
+    /* background-color: #1976d2; */
   }
 `;
 

@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import StyleApp from "./App.style";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Company from "./components/Company";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/company/:name" element={<Company />} />
         </Routes>
       </BrowserRouter>
+      <Footer />
     </StyleApp>
   );
 }

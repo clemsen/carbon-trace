@@ -18,7 +18,7 @@ export const SCOPE_1_2 = {
   Stellantis: "10%",
 };
 
-const SOURCE = {
+export const SOURCE = {
   LVMH: [
     "https://www.lvmh.fr/groupe/engagements/societe-environnement/empreinte-environnementale-du-groupe/",
   ],

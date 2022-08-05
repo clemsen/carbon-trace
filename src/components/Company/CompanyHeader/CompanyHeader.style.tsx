@@ -1,10 +1,17 @@
 import styled from "styled-components";
 
-const StyleCompanyHeader = styled.div`
+const StyleCompanyHeader = styled.h1`
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 60px;
+    height: 60px;
+    margin-right: 40px;
+  }
 `;
 
 export default StyleCompanyHeader;

@@ -12,7 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<>Insert homepage here</>}></Route>
           <Route path="/companies" element={<Companies />} />
-          <Route path="/company/:name" element={<Company />} />
+          <Route path="/company/:company" element={<Company />} />
         </Routes>
       </BrowserRouter>
     </StyleApp>

@@ -1,17 +1,19 @@
-import Alternatives from "./Alternatives";
 import CompanyHeader from "./CompanyHeader";
 import CompanyInformation from "./CompanyInformation";
 import StyleCompany from "./Company.style";
 import { useParams } from "react-router-dom";
+import LateralMenu from "../Companies/LateralMenu";
 
 const Company = () => {
-  const name = useParams().name;
+  const company = useParams().company || "";
 
   return (
     <StyleCompany>
-      <CompanyHeader name={name} />
-      <CompanyInformation />
-      <Alternatives />
+      <div className="company-section">
+        <CompanyHeader company={company} />
+        <CompanyInformation company={company} />
+      </div>
+      <LateralMenu />
     </StyleCompany>
   );
 };

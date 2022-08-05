@@ -1,19 +1,30 @@
+import { companiesInfo } from "../../../constants";
 import StyleCompanyInformation from "./CompanyInformation.style";
+import InformationItem from "./InformationItem";
 
-const CompanyInformation = () => {
+interface PropsType {
+  company: string;
+}
+
+const CompanyInformation = ({ company }: PropsType) => {
   return (
     <StyleCompanyInformation className="company-information">
-      <div className="carbon-tracability-index">
-        <div className="scope1">Scope 1</div>
-        <div className="scope2">Scope 2</div>
-        <div className="scope-suppliers">Scope fournisseurs</div>
-      </div>
-      <div className="carbon-euro">
-        <div className="carbon-euro-tracability">Carbone par € estimé ISR</div>
-        <div className="carbon-euro-classic">
-          Carbone par € estimé bilan carbone
-        </div>
-      </div>
+      <InformationItem
+        itemName="Indice de Tracabilité Carbone"
+        itemValue={companiesInfo[company].itc}
+      />
+      <InformationItem
+        itemName="Scope 1"
+        itemValue={companiesInfo[company].scope1 || ""}
+      />
+      <InformationItem
+        itemName="Scope 2"
+        itemValue={companiesInfo[company].scope2 || ""}
+      />
+      <InformationItem
+        itemName="Scope 3"
+        itemValue={companiesInfo[company].scope3 || ""}
+      />
     </StyleCompanyInformation>
   );
 };

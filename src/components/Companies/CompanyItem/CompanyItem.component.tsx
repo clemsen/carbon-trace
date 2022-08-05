@@ -1,26 +1,32 @@
-import { CompanyInfoType } from "../../../constants";
+import { companiesInfo } from "../../../constants";
 import StyleCompanyItem from "./CompanyItem.style";
 
 interface PropsType {
-  companyInfo: CompanyInfoType;
+  company: string;
 }
 
-const CompanyItem = ({ companyInfo }: PropsType) => {
+const CompanyItem = ({ company }: PropsType) => {
   return (
     <>
-      {companyInfo.name && (
+      {companiesInfo[company].name && (
         <StyleCompanyItem
-          to={{ pathname: "/company/" + companyInfo.name.toLowerCase() }}
+          to={{
+            pathname: "/company/" + companiesInfo[company].name.toLowerCase(),
+          }}
         >
           <div className="company-item-name-logo">
             <img
               className="company-item-logo"
-              src={"/images/" + companyInfo.name + ".png"}
-              alt={"logo " + companyInfo.name}
+              src={"/images/" + companiesInfo[company].name + ".png"}
+              alt={"logo " + companiesInfo[company].name}
             />
-            <div className="company-item-name">{companyInfo.name}</div>
+            <div className="company-item-name">
+              {companiesInfo[company].name}
+            </div>
           </div>
-          <div className="company-item-information">{companyInfo.itc}</div>
+          <div className="company-item-information">
+            {companiesInfo[company].itc}
+          </div>
         </StyleCompanyItem>
       )}
     </>

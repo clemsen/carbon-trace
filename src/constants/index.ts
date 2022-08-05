@@ -1,15 +1,21 @@
-export type CompanyInfoType = { name: string; itc: string };
+export type CompanyInfoType = {
+  name: string;
+  itc: string;
+  scope1?: string;
+  scope2?: string;
+  scope3?: string;
+};
 
-export const companiesInfo: CompanyInfoType[] = [
-  {
+export const companiesInfo: Record<string, CompanyInfoType> = {
+  lvmh: {
     name: "LVMH",
     itc: "4%",
   },
-  {
+  danone: {
     name: "Danone",
     itc: "8%",
   },
-];
+};
 
 export const SCOPE_1_2 = {
   LVMH: "4%",

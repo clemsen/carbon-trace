@@ -1,4 +1,4 @@
-import { companiesInfo, CompanyInfoType } from "../../constants";
+import { companiesInfo } from "../../constants";
 import StyleCompanies from "./Companies.style";
 import CompanyItem from "./CompanyItem";
 import CompanyItemsTitle from "./CompanyItemsTitle";
@@ -10,8 +10,8 @@ const Companies = () => {
       <div className="company-items">
         <h1>Entreprises</h1>
         <CompanyItemsTitle />
-        {companiesInfo.map((companyInfo: CompanyInfoType) => (
-          <CompanyItem companyInfo={companyInfo} />
+        {Object.keys(companiesInfo).map((company: string) => (
+          <CompanyItem company={company} />
         ))}
       </div>
       <LateralMenu />

@@ -2,7 +2,7 @@ import { companiesInfo } from "../../constants";
 import StyleCompanies from "./Companies.style";
 import CompanyItem from "./CompanyItem";
 import CompanyItemsTitle from "./CompanyItemsTitle";
-import LateralMenu from "./LateralMenu";
+import LateralMenu from "../LateralMenu";
 
 const Companies = () => {
   return (

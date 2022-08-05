@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const StyleLateralMenu = styled.div`
-  width: 100%;
   padding: 20px;
   border-left: solid;
   border-color: rgb(227, 227, 227);
@@ -23,10 +22,6 @@ const StyleLateralMenu = styled.div`
     :hover {
       background-color: #31ba5c;
     }
-  }
-
-  & .MuiTouchRipple-root {
-    /* background-color: #1976d2; */
   }
 `;
 

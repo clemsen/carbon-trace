@@ -1,4 +1,10 @@
-export type CompanyInfoType = { name: string; itc: string };
+export type CompanyInfoType = {
+  name: string;
+  itc: string;
+  scope1?: string;
+  scope2?: string;
+  scope3?: string;
+};
 
 export const companiesInfo: Record<string, CompanyInfoType> = {
   lvmh: {

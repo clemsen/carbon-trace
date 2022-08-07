@@ -8,8 +8,8 @@ const StyleCompanyHeader = styled.h1`
   align-items: center;
 
   img {
-    width: 60px;
-    height: 60px;
+    max-width: 150px;
+    max-height: 60px;
     margin-right: 40px;
   }
 `;

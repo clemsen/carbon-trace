@@ -11,6 +11,7 @@ const StyleCompanyItem = styled(Link)`
   box-shadow: 0 2px 4px rgb(0 0 0 / 16%);
   border-radius: 5px;
   font-size: 20px;
+  min-height: 60px;
 
   .company-items-title {
     font-weight: bold;
@@ -30,7 +31,6 @@ const StyleCompanyItem = styled(Link)`
 
   .company-item-logo {
     width: 60px;
-    height: 60px;
     margin-right: 40px;
   }
 `;

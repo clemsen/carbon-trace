@@ -25,6 +25,10 @@ const CompanyInformation = ({ company }: PropsType) => {
         itemName="Scope 3"
         itemValue={companiesInfo[company].scope3 || ""}
       />
+      <InformationItem
+        itemName="Part du CO2 transmis par les fournisseurs"
+        itemValue={companiesInfo[company].co2supplier || ""}
+      />
     </StyleCompanyInformation>
   );
 };

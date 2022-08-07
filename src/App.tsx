@@ -4,6 +4,7 @@ import StyleApp from "./App.style";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Company from "./components/Company";
 import Footer from "./components/Footer";
+import Homepage from "./components/Homepage";
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<>Insert homepage here</>}></Route>
+          <Route path="/" element={<Homepage />}></Route>
           <Route path="/companies" element={<Companies />} />
           <Route path="/company/:company" element={<Company />} />
         </Routes>

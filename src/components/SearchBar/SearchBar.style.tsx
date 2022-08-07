@@ -7,6 +7,10 @@ const StyleSearchBar = styled.div`
     border-radius: 6px 0px 0px 6px;
   }
 
+  & .MuiTextField-root {
+    width: 100%;
+  }
+
   .lateral-search-button {
     background-color: #2ace5e;
     border-radius: 0px 6px 6px 0px;

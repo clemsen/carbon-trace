@@ -9,7 +9,6 @@ const StyleHeader = styled("div")`
 `;
 
 const StyleHeaderWrapper = styled("div")`
-  width: 100%;
   background-color: #ffffff;
   position: sticky;
   box-shadow: 0 1px 3px #a5a5a5;

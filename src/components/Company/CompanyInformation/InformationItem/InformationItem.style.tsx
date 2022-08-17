@@ -14,11 +14,6 @@ const StyleInformationItem = styled.div`
     padding: 10px;
     text-align: center;
   }
-
-  img {
-    width: 16px;
-    margin-left: 5px;
-  }
 `;
 
 export default StyleInformationItem;

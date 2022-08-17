@@ -12,14 +12,17 @@ const CompanyInformation = ({ company }: PropsType) => {
       <InformationItem
         itemName="Indice de Tracabilité Carbone"
         itemValue={companiesInfo[company].itc}
+        itemDescription="Indice de Tracabilité Carbone"
       />
       <InformationItem
         itemName="Scope 1"
         itemValue={companiesInfo[company].scope1 || ""}
+        itemDescription="Description Scope 1"
       />
       <InformationItem
         itemName="Scope 2"
         itemValue={companiesInfo[company].scope2 || ""}
+        itemDescription="Description Scope 2"
       />
       <InformationItem
         itemName="Scope 3"

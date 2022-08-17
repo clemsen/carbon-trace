@@ -20,7 +20,9 @@ const InformationItem = ({ itemName, itemValue }: PropsType) => {
           onMouseEnter={() => setShowModal(true)}
           onMouseLeave={() => setShowModal(false)}
         />
-        {showModal && <InformationModal description="blabla" />}
+        {showModal && (
+          <InformationModal description="blabla car de la mote qsdlkgjfb qsdmfionqzsd:f misd fmoiqsdbnvkqns viuqz sdq; vioups dcvlqsmdjbncoqsd vjlh bzfemiubc ckjlih" />
+        )}
       </div>
       <div className="info-item-value">{itemValue}</div>
     </StyleInformationItem>

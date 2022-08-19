@@ -30,7 +30,7 @@ const Companies = () => {
             <h1>Entreprises</h1>
             <CompanyItemsTitle />
             {companies?.map((company: any) => (
-              <CompanyItem company={company.key_name} />
+              <CompanyItem key_name={company.key_name} company={company.name} />
             ))}
           </div>
           <LateralMenu />

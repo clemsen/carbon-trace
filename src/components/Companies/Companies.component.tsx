@@ -4,38 +4,23 @@ import CompanyItemsTitle from "./CompanyItemsTitle";
 import LateralMenu from "../LateralMenu";
 
 import { supabase } from "../../service/supabaseClient";
-import { Session } from "@supabase/supabase-js";
 import { useEffect, useState } from "react";
 
-interface PropsType {
-  session: Session | null;
-}
-
-const Companies = ({ session }: PropsType) => {
-  const [, setLoading] = useState(true);
+const Companies = () => {
   const [companies, setCompanies] = useState<any[] | null>(null);
 
   useEffect(() => {
     getCompanies();
-  }, [session]);
+  }, []);
 
   const getCompanies = async () => {
     try {
-      setLoading(true);
-
-      let { data, error, status } = await supabase.from("Company");
-
-      if (error && status !== 406) {
-        throw error;
-      }
-
+      let { data } = await supabase.from("Company");
       if (data) {
         setCompanies(data);
       }
-    } catch (error) {
-      alert("Error");
-    } finally {
-      setLoading(false);
+    } catch {
+      console.log("Error getting data from supabase");
     }
   };
 

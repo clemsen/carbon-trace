@@ -3,16 +3,27 @@ import CompanyItem from "./CompanyItem";
 import CompanyItemsTitle from "./CompanyItemsTitle";
 import LateralMenu from "../LateralMenu";
 
-import { useSelect } from "react-supabase";
+import { useFilter, useSelect } from "react-supabase";
+import { useLocation } from "react-router-dom";
 
 const Companies = () => {
-  const [{ data: companies, error, fetching }] = useSelect("Company");
+  const search = useLocation().search;
+  const searchParam = new URLSearchParams(search).get("search");
+
+  const filter = useFilter(
+    (query) => query.ilike("name", `*${searchParam ?? ""}*`),
+    [searchParam]
+  );
+
+  const [{ data: companies, error, fetching }] = useSelect("Company", {
+    filter,
+  });
 
   return (
     <>
       {/* To do : Créer un composant loader et un cas d'erreur */}
       {fetching && <>Chargement ...</>}
-      {error && <>Une erreur est survenue, veuillez réessayer plus tard</>}
+      {error && <>{error.message}</>}
       {companies && (
         <StyleCompanies>
           <div className="company-items">

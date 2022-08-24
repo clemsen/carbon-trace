@@ -1,7 +1,7 @@
 import { Button, TextField } from "@mui/material";
 import StyleSearchBar from "./SearchBar.style";
 import SearchIcon from "@mui/icons-material/Search";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const SearchBar = () => {
@@ -13,26 +13,29 @@ const SearchBar = () => {
     setSearch(target.value);
   };
 
-  const searchCompany = () => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     navigate(`/companies?search=${search}`);
   };
 
   return (
-    <StyleSearchBar>
-      <TextField
-        label="Recherche"
-        variant="outlined"
-        value={search}
-        onChange={onChangeSearch}
-      />
-      <Button
-        className="lateral-search-button"
-        variant="contained"
-        onClick={searchCompany}
-      >
-        <SearchIcon />
-      </Button>
-    </StyleSearchBar>
+    <form onSubmit={handleSubmit}>
+      <StyleSearchBar>
+        <TextField
+          label="Recherche"
+          variant="outlined"
+          value={search}
+          onChange={onChangeSearch}
+        />
+        <Button
+          className="lateral-search-button"
+          variant="contained"
+          type="submit"
+        >
+          <SearchIcon />
+        </Button>
+      </StyleSearchBar>
+    </form>
   );
 };
 

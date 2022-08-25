@@ -3,39 +3,40 @@ import CompanyItem from "./CompanyItem";
 import CompanyItemsTitle from "./CompanyItemsTitle";
 import LateralMenu from "../LateralMenu";
 
-import { supabase } from "../../service/supabaseClient";
-import { useEffect, useState } from "react";
+import { useFilter, useSelect } from "react-supabase";
+import { useLocation } from "react-router-dom";
 
 const Companies = () => {
-  const [companies, setCompanies] = useState<any[] | null>(null);
+  const search = useLocation().search;
+  const searchParam = new URLSearchParams(search).get("search");
 
-  useEffect(() => {
-    getCompanies();
-  }, []);
+  const filter = useFilter(
+    (query) => query.ilike("name", `*${searchParam ?? ""}*`),
+    [searchParam]
+  );
 
-  const getCompanies = async () => {
-    try {
-      let { data } = await supabase.from("Company");
-      if (data) {
-        setCompanies(data);
-      }
-    } catch {
-      console.log("Error getting data from supabase");
-    }
-  };
+  const [{ data: companies, error, fetching }] = useSelect("Company", {
+    filter,
+  });
 
   return (
-    <StyleCompanies>
-      <div className="company-items">
-        <>{console.log("companies = ", companies)}</>
-        <h1>Entreprises</h1>
-        <CompanyItemsTitle />
-        {companies?.map((company: any) => (
-          <CompanyItem company={company.key_name} />
-        ))}
-      </div>
-      <LateralMenu />
-    </StyleCompanies>
+    <>
+      {/* To do : Créer un composant loader et un cas d'erreur */}
+      {fetching && <>Chargement ...</>}
+      {error && <>{error.message}</>}
+      {companies && (
+        <StyleCompanies>
+          <div className="company-items">
+            <h1>Entreprises</h1>
+            <CompanyItemsTitle />
+            {companies?.map((company: any) => (
+              <CompanyItem company={company.key_name} />
+            ))}
+          </div>
+          <LateralMenu />
+        </StyleCompanies>
+      )}
+    </>
   );
 };
 

@@ -16,6 +16,7 @@ const Companies = () => {
   );
 
   const [{ data: companies, error, fetching }] = useSelect("Company", {
+    columns: "*, CompanyCharacteristic (*)",
     filter,
   });
 
@@ -30,7 +31,11 @@ const Companies = () => {
             <h1>Entreprises</h1>
             <CompanyItemsTitle />
             {companies?.map((company: any) => (
-              <CompanyItem company={company.key_name} />
+              <CompanyItem
+                keyName={company.keyName}
+                company={company.name}
+                characteristics={company.CompanyCharacteristic}
+              />
             ))}
           </div>
           <LateralMenu />

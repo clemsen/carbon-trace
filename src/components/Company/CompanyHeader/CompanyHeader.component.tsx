@@ -1,8 +1,8 @@
-import { companiesInfo } from "../../../constants";
+import { CompanyType } from "../../../types/types";
 import StyleCompanyHeader from "./CompanyHeader.style";
 
 interface PropsType {
-  company: string;
+  company: CompanyType;
 }
 
 const CompanyHeader = ({ company }: PropsType) => {
@@ -11,11 +11,11 @@ const CompanyHeader = ({ company }: PropsType) => {
       <div className="company-logo">
         <img
           className="company-item-logo"
-          src={"/images/" + companiesInfo[company].name + ".png"}
-          alt={"logo " + companiesInfo[company].name}
+          src={"/images/" + company.keyName + ".png"}
+          alt={"logo " + company.name}
         />
       </div>
-      <div className="company-name">{companiesInfo[company].name}</div>
+      <div className="company-name">{company.name}</div>
     </StyleCompanyHeader>
   );
 };

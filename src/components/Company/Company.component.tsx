@@ -4,17 +4,36 @@ import StyleCompany from "./Company.style";
 import { useParams } from "react-router-dom";
 import LateralMenu from "../LateralMenu";
 
+import { useSelect, useFilter } from "react-supabase";
+
 const Company = () => {
-  const company = useParams().company || "";
+  const companyKeyName = useParams().company || "";
+
+  const filter = useFilter(
+    (query) => query.eq("keyName", companyKeyName),
+    [companyKeyName]
+  );
+
+  const [{ data: companies, error, fetching }] = useSelect("Company", {
+    columns: "*, CompanyCharacteristic (*, Characteristic (*))",
+    filter,
+  });
 
   return (
-    <StyleCompany>
-      <div className="company-section">
-        <CompanyHeader company={company} />
-        <CompanyInformation company={company} />
-      </div>
-      <LateralMenu />
-    </StyleCompany>
+    <>
+      {/* To do : Créer un composant loader et un cas d'erreur */}
+      {fetching && <>Chargement ...</>}
+      {error && <>{error.message}</>}
+      {companies?.length === 1 && (
+        <StyleCompany>
+          <div className="company-section">
+            <CompanyHeader company={companies[0]} />
+            <CompanyInformation company={companies[0]} />
+          </div>
+          <LateralMenu />
+        </StyleCompany>
+      )}
+    </>
   );
 };
 

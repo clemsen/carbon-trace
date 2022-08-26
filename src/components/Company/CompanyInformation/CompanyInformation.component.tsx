@@ -1,37 +1,21 @@
-import { companiesInfo } from "../../../constants";
+import { CompanyType } from "../../../types/types";
 import StyleCompanyInformation from "./CompanyInformation.style";
 import InformationItem from "./InformationItem";
 
 interface PropsType {
-  company: string;
+  company: CompanyType;
 }
 
 const CompanyInformation = ({ company }: PropsType) => {
   return (
     <StyleCompanyInformation className="company-information">
-      <InformationItem
-        itemName="Indice de Tracabilité Carbone"
-        itemValue={companiesInfo[company].itc}
-        itemDescription="Indice de Tracabilité Carbone"
-      />
-      <InformationItem
-        itemName="Scope 1"
-        itemValue={companiesInfo[company].scope1 || ""}
-        itemDescription="Description Scope 1"
-      />
-      <InformationItem
-        itemName="Scope 2"
-        itemValue={companiesInfo[company].scope2 || ""}
-        itemDescription="Description Scope 2"
-      />
-      <InformationItem
-        itemName="Scope 3"
-        itemValue={companiesInfo[company].scope3 || ""}
-      />
-      <InformationItem
-        itemName="Part du CO2 transmis par les fournisseurs"
-        itemValue={companiesInfo[company].co2supplier || ""}
-      />
+      {company.CompanyCharacteristic.map((characteristic) => (
+        <InformationItem
+          itemName={characteristic.Characteristic.name}
+          itemValue={characteristic.value}
+          itemDescription={characteristic.Characteristic.description}
+        />
+      ))}
     </StyleCompanyInformation>
   );
 };

@@ -6,4 +6,20 @@ export type CompanyCharacteristicType = {
   startDate: string;
   endDate: string;
   isDisplayed: boolean;
+  Characteristic: CharacteristicType;
+};
+
+export type CompanyType = {
+  id: number;
+  keyName: string;
+  name: string;
+  createdAt: string;
+  CompanyCharacteristic: CompanyCharacteristicType[];
+};
+
+export type CharacteristicType = {
+  id: number;
+  type: string;
+  name: string;
+  description?: string;
 };

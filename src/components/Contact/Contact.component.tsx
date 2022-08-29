@@ -1,16 +1,40 @@
+import { Button, TextField } from "@mui/material";
+import LateralMenu from "../LateralMenu";
+import StyleContact from "./Contact.style";
+import SearchIcon from "@mui/icons-material/Search";
+
 const Contact = () => {
   return (
-    <form>
-      <label>Votre Email</label>
-      <br />
-      <input type="text" id="email" name="email" />
-      <br />
-      <label>Votre Message</label>
-      <br />
-      <input type="text" id="message" name="message" />
-      <br />
-      <input type="submit" value="Submit"></input>
-    </form>
+    <StyleContact>
+      <form className="contact-section">
+        <h2 className="form-label">Votre Email</h2>
+        <TextField
+          id="contact-email"
+          label="Votre Email"
+          variant="outlined"
+          name="contact-email"
+          required
+        />
+
+        <h2 className="form-label">Votre Message</h2>
+        <TextField
+          id="contact-message"
+          label="Votre Message"
+          variant="outlined"
+          name="contact-message"
+          required
+          multiline
+        />
+        <Button
+          className="contact-submit-button"
+          variant="outlined"
+          type="submit"
+        >
+          Envoyer
+        </Button>
+      </form>
+      <LateralMenu />
+    </StyleContact>
   );
 };
 

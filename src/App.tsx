@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Homepage from "./components/Homepage";
 import { Provider } from "react-supabase";
 import { supabase } from "./service/supabaseClient";
+import Contact from "./components/Contact";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/" element={<Homepage />}></Route>
             <Route path="/companies" element={<Companies />} />
             <Route path="/company/:company" element={<Company />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </BrowserRouter>
       </Provider>

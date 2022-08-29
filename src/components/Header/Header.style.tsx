@@ -13,7 +13,6 @@ const StyleHeaderWrapper = styled("div")`
   position: sticky;
   box-shadow: 0 1px 3px #a5a5a5;
   padding: 20px;
-  margin-bottom: 20px;
 `;
 
 export { StyleHeader, StyleHeaderWrapper };

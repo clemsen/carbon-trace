@@ -5,6 +5,7 @@ const StyleSearchBar = styled.div`
 
   & .MuiOutlinedInput-root {
     border-radius: 6px 0px 0px 6px;
+    background-color: #ffffff;
   }
 
   & .MuiTextField-root {

@@ -8,10 +8,15 @@ const StyleHomepage = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
+  color: #ffffff;
+  background-image: url("/images/homepage-image.jpg");
+  background-size: cover;
+  background-position: bottom;
 
   .homepage-title {
     font-size: 45px;
     font-weight: 800;
+    text-align: center;
   }
 
   .homepage-body {

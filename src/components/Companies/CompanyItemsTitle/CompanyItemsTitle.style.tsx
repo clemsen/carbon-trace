@@ -24,6 +24,11 @@ const StyleCompanyItem = styled.div`
     align-items: center;
     justify-content: center;
   }
+
+  @media screen and (max-width: 700px) {
+    grid-template-columns: 70% 30%;
+    font-size: 18px;
+  }
 `;
 
 export default StyleCompanyItem;

@@ -13,10 +13,6 @@ const StyleCompanyItem = styled(Link)`
   font-size: 20px;
   min-height: 60px;
 
-  .company-items-title {
-    font-weight: bold;
-  }
-
   .company-item-information {
     display: flex;
     align-items: center;
@@ -32,6 +28,16 @@ const StyleCompanyItem = styled(Link)`
   .company-item-logo {
     width: 60px;
     margin-right: 40px;
+  }
+
+  @media screen and (max-width: 700px) {
+    grid-template-columns: 70% 30%;
+    font-size: 16px;
+
+    .company-item-logo {
+      width: 50px;
+      margin-right: 20px;
+    }
   }
 `;
 

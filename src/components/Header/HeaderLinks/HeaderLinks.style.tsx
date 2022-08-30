@@ -6,7 +6,7 @@ const StyleHeaderLinks = styled("div")`
   gap: 24px;
 
   @media screen and (max-width: 700px) {
-    gap: 12px;
+    gap: 16px;
   }
 `;
 
@@ -18,7 +18,7 @@ export const HeaderLink = styled(Link)`
   color: #000000;
 
   @media screen and (max-width: 700px) {
-    font-size: 12px;
+    font-size: 16px;
   }
 
   :hover {
@@ -37,7 +37,7 @@ export const HeaderLinkFilled = styled(Link)`
   color: #ffffff;
 
   @media screen and (max-width: 700px) {
-    font-size: 12px;
+    font-size: 16px;
   }
 
   :hover {

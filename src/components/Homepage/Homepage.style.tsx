@@ -24,6 +24,7 @@ const StyleHomepage = styled.div`
     font-size: 18px;
     margin-left: 10px;
     margin-right: 10px;
+    text-align: center;
   }
 
   .homepage-search-bar {

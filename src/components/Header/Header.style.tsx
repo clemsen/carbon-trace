@@ -5,7 +5,7 @@ const StyleHeader = styled("div")`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0px 70px 0px 70px;
+  margin: 0px 2% 0px 2%;
 `;
 
 const StyleHeaderWrapper = styled("div")`

@@ -5,7 +5,7 @@ const StyleHeader = styled("div")`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0px 70px 0px 70px;
+  margin: 0px 2% 0px 2%;
 `;
 
 const StyleHeaderWrapper = styled("div")`
@@ -13,6 +13,9 @@ const StyleHeaderWrapper = styled("div")`
   position: sticky;
   box-shadow: 0 1px 3px #a5a5a5;
   padding: 20px;
+  @media screen and (max-width: 700px) {
+    padding-left: 7px;
+  }
 `;
 
 export { StyleHeader, StyleHeaderWrapper };

@@ -24,6 +24,10 @@ const StyleContact = styled.div`
       color: #31ba5c;
     }
   }
+
+  @media screen and (max-width: 700px) {
+    grid-template-columns: 100% 0%;
+  }
 `;
 
 export default StyleContact;

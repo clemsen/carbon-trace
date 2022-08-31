@@ -9,6 +9,10 @@ const StyleCompany = styled.div`
   .company-section {
     width: 80%;
   }
+
+  @media screen and (max-width: 700px) {
+    grid-template-columns: 100% 0%;
+  }
 `;
 
 export default StyleCompany;

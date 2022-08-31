@@ -17,14 +17,24 @@ const StyleHomepage = styled.div`
     font-size: 45px;
     font-weight: 800;
     text-align: center;
+    margin: 0 10px 0 10px;
   }
 
   .homepage-body {
     font-size: 18px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
   }
 
   .homepage-search-bar {
     width: 540px;
+  }
+
+  @media screen and (max-width: 700px) {
+    .homepage-search-bar {
+      width: 300px;
+    }
   }
 `;
 

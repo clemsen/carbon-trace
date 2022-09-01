@@ -4,7 +4,11 @@ import SearchIcon from "@mui/icons-material/Search";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const SearchBar = () => {
+interface PropsType {
+  label?: string;
+}
+
+const SearchBar = ({ label }: PropsType) => {
   const navigate = useNavigate();
 
   const [search, setSearch] = useState("");
@@ -22,7 +26,7 @@ const SearchBar = () => {
     <form onSubmit={handleSubmit}>
       <StyleSearchBar>
         <TextField
-          label="Recherche"
+          label={label || "Recherche"}
           variant="outlined"
           value={search}
           onChange={onChangeSearch}

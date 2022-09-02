@@ -11,7 +11,7 @@ const Companies = () => {
   const searchParam = new URLSearchParams(search).get("search");
 
   const filter = useFilter(
-    (query) => query.ilike("name", `*${searchParam ?? ""}*`),
+    (query) => query.ilike("name", `*${searchParam ?? ""}*`).order("name"),
     [searchParam]
   );
 
@@ -30,7 +30,7 @@ const Companies = () => {
           <div className="company-items">
             <h1>Entreprises</h1>
             <CompanyItemsTitle />
-            {companies?.map((company: any) => (
+            {companies.map((company: any) => (
               <CompanyItem
                 keyName={company.keyName}
                 company={company.name}

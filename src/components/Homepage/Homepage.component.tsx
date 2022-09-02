@@ -10,7 +10,7 @@ const Homepage = () => {
         entreprises
       </p>
       <div className="homepage-search-bar">
-        <SearchBar />
+        <SearchBar label="Rechercher une entreprise" />
       </div>
     </StyleHomepage>
   );

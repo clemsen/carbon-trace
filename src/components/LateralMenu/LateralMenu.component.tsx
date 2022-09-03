@@ -1,12 +1,30 @@
-import StyleLateralMenu from "./LateralMenu.style";
+import StyleLateralMenu, { ShowLateralMenuButton } from "./LateralMenu.style";
 import SearchBar from "../SearchBar";
+import { useState } from "react";
+import { IconButton } from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
+import { KeyboardArrowRight } from "@mui/icons-material";
 
 const LateralMenu = () => {
+  const [display, setDisplay] = useState(false);
+
+  const toggleDisplay = () => {
+    setDisplay(!display);
+  };
+
   return (
-    <StyleLateralMenu>
-      <h3>Rechercher une entreprise</h3>
-      <SearchBar />
-    </StyleLateralMenu>
+    <>
+      <ShowLateralMenuButton onClick={toggleDisplay}>
+        <SearchIcon />
+      </ShowLateralMenuButton>
+      <StyleLateralMenu {...{ display }}>
+        <IconButton className="hide-button" onClick={toggleDisplay}>
+          <KeyboardArrowRight />
+        </IconButton>
+        <h3>Rechercher une entreprise</h3>
+        <SearchBar />
+      </StyleLateralMenu>
+    </>
   );
 };
 

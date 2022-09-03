@@ -11,8 +11,10 @@ const StyleHeader = styled("div")`
 const StyleHeaderWrapper = styled("div")`
   background-color: #ffffff;
   position: sticky;
+  top: 0;
   box-shadow: 0 1px 3px #a5a5a5;
   padding: 20px;
+  z-index: 100;
   @media screen and (max-width: 700px) {
     padding-left: 7px;
   }

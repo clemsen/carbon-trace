@@ -12,7 +12,7 @@ const StyleSearchBar = styled.div`
     width: 100%;
   }
 
-  .lateral-search-button {
+  .search-button {
     background-color: #2ace5e;
     border-radius: 0px 6px 6px 0px;
     min-width: 30px;

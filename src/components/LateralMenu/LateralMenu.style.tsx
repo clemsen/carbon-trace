@@ -7,6 +7,10 @@ const StyleLateralMenu = styled.div<{ display: boolean }>`
   border-color: rgb(227, 227, 227);
   background-color: #ffffff;
 
+  .searchbar {
+    margin-bottom: 20px;
+  }
+
   .hide-button {
     display: none;
   }

@@ -31,11 +31,7 @@ const SearchBar = ({ label }: PropsType) => {
           value={search}
           onChange={onChangeSearch}
         />
-        <Button
-          className="lateral-search-button"
-          variant="contained"
-          type="submit"
-        >
+        <Button className="search-button" variant="contained" type="submit">
           <SearchIcon />
         </Button>
       </StyleSearchBar>

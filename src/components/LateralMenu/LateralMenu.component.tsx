@@ -4,6 +4,7 @@ import { useState } from "react";
 import { IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { KeyboardArrowRight } from "@mui/icons-material";
+import FilterTheme from "../FilterTheme";
 
 const LateralMenu = () => {
   const [display, setDisplay] = useState(false);
@@ -22,7 +23,10 @@ const LateralMenu = () => {
           <KeyboardArrowRight />
         </IconButton>
         <h3>Rechercher une entreprise</h3>
-        <SearchBar />
+        <div className="searchbar">
+          <SearchBar />
+        </div>
+        <FilterTheme />
       </StyleLateralMenu>
     </>
   );

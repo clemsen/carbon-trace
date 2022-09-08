@@ -3,9 +3,13 @@ import StyleHeaderLinks, {
   HeaderLinkFilled,
 } from "./HeaderLinks.style";
 
-const HeaderLinks = () => {
+interface PropsType {
+  className: string;
+}
+
+const HeaderLinks = ({ className }: PropsType) => {
   return (
-    <StyleHeaderLinks>
+    <StyleHeaderLinks className={className}>
       <HeaderLink to="/">Accueil</HeaderLink>
       <HeaderLink to="/companies">Entreprises</HeaderLink>
       <HeaderLinkFilled to="/contact">Contactez-nous</HeaderLinkFilled>

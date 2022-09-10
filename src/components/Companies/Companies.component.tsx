@@ -17,29 +17,10 @@ const Companies = () => {
   );
 
   const [{ data: companies, error, fetching }] = useSelect("Company", {
-    columns: "*, CompanyCharacteristic (*), CompanyTag (*)",
+    columns:
+      "*, CompanyCharacteristic (characteristic, value), CompanyTag (tag)",
     filter,
   });
-
-  const filterTheme = useFilter(
-    (query) => query.eq("tagKey", themeParam).order("tagKey"),
-    [themeParam]
-  );
-
-  const [{ data: tags }] = useSelect("Tag", {
-    columns: "*, CompanyTag (*)",
-    ...(themeParam && { filter: filterTheme }),
-  });
-
-  const getCompaniesFromTags = (tags: any[]) => {
-    let listCompanies: any[] = [];
-    tags.forEach((companies: any) => {
-      companies.CompanyTag.forEach((company: any) => {
-        listCompanies.push(company.company);
-      });
-    });
-    return listCompanies;
-  };
 
   return (
     <>
@@ -54,7 +35,11 @@ const Companies = () => {
             {companies
               .filter(
                 (company) =>
-                  tags && getCompaniesFromTags(tags).includes(company.keyName)
+                  themeParam == null ||
+                  themeParam === "" ||
+                  company.CompanyTag.map(
+                    (companyTag: { tag: string }) => companyTag.tag
+                  ).includes(themeParam)
               )
               .map((company: any) => (
                 <CompanyItem

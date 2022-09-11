@@ -1,5 +1,5 @@
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { useSelect } from "react-supabase";
 
 interface PropsType {
@@ -9,11 +9,16 @@ interface PropsType {
 const Filter = ({ onClick }: PropsType) => {
   const navigate = useNavigate();
 
+  const [urlSearchParams] = useSearchParams();
+  const searchParams = Object.fromEntries(Array.from(urlSearchParams));
+
   const [{ data: tags, error, fetching }] = useSelect("Tag");
 
   const handleChange = (event: any) => {
     event.preventDefault();
-    navigate(`/companies?theme=${event.target.value}`);
+    const newQueryParams = { ...searchParams, theme: event.target.value };
+    const queryString = new URLSearchParams(newQueryParams).toString();
+    navigate(`/companies?${queryString}`);
     onClick && onClick();
   };
 

@@ -2,7 +2,7 @@ import { Button, TextField } from "@mui/material";
 import StyleSearchBar from "./SearchBar.style";
 import SearchIcon from "@mui/icons-material/Search";
 import { ChangeEvent, FormEvent, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 interface PropsType {
   label?: string;
@@ -12,7 +12,10 @@ interface PropsType {
 const SearchBar = ({ label, onClick }: PropsType) => {
   const navigate = useNavigate();
 
-  const [search, setSearch] = useState("");
+  const [urlSearchParams] = useSearchParams();
+  const searchParams = Object.fromEntries(Array.from(urlSearchParams));
+
+  const [search, setSearch] = useState(searchParams.search ?? "");
 
   const onChangeSearch = ({ target }: ChangeEvent<HTMLInputElement>) => {
     setSearch(target.value);
@@ -20,7 +23,9 @@ const SearchBar = ({ label, onClick }: PropsType) => {
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    navigate(`/companies?search=${search}`);
+    const newQueryParams = { ...searchParams, search };
+    const queryString = new URLSearchParams(newQueryParams).toString();
+    navigate(`/companies?${queryString}`);
   };
 
   return (

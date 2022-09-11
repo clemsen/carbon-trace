@@ -6,9 +6,10 @@ import { useNavigate } from "react-router-dom";
 
 interface PropsType {
   label?: string;
+  onClick?: () => void;
 }
 
-const SearchBar = ({ label }: PropsType) => {
+const SearchBar = ({ label, onClick }: PropsType) => {
   const navigate = useNavigate();
 
   const [search, setSearch] = useState("");
@@ -31,7 +32,12 @@ const SearchBar = ({ label }: PropsType) => {
           value={search}
           onChange={onChangeSearch}
         />
-        <Button className="search-button" variant="contained" type="submit">
+        <Button
+          className="search-button"
+          variant="contained"
+          type="submit"
+          onClick={onClick}
+        >
           <SearchIcon />
         </Button>
       </StyleSearchBar>

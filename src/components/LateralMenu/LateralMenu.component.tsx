@@ -24,9 +24,9 @@ const LateralMenu = () => {
         </IconButton>
         <h3>Rechercher une entreprise</h3>
         <div className="searchbar">
-          <SearchBar />
+          <SearchBar onClick={toggleDisplay} />
         </div>
-        <FilterTheme />
+        <FilterTheme onClick={toggleDisplay} />
       </StyleLateralMenu>
     </>
   );

@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import LateralMenu from "../LateralMenu";
 
 import { useSelect, useFilter } from "react-supabase";
+import Spinner from "../Spinner";
 
 const Company = () => {
   const companyKeyName = useParams().company || "";
@@ -21,8 +22,8 @@ const Company = () => {
 
   return (
     <>
-      {/* To do : Créer un composant loader et un cas d'erreur */}
-      {fetching && <>Chargement ...</>}
+      {/* To do : Créer un cas d'erreur */}
+      {fetching && <Spinner />}
       {error && <>{error.message}</>}
       {companies?.length === 1 && (
         <StyleCompany>

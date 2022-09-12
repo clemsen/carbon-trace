@@ -5,6 +5,7 @@ import LateralMenu from "../LateralMenu";
 
 import { useFilter, useSelect } from "react-supabase";
 import { useLocation } from "react-router-dom";
+import Spinner from "../Spinner";
 
 const Companies = () => {
   const search = useLocation().search;
@@ -24,8 +25,8 @@ const Companies = () => {
 
   return (
     <>
-      {/* To do : Créer un composant loader et un cas d'erreur */}
-      {fetching && <>Chargement ...</>}
+      {/* To do : Créer un cas d'erreur */}
+      {fetching && <Spinner />}
       {error && <>{error.message}</>}
       {companies && (
         <StyleCompanies>

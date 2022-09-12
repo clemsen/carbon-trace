@@ -1,6 +1,7 @@
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useSelect } from "react-supabase";
+import Spinner from "../Spinner";
 
 interface PropsType {
   onClick?: () => void;
@@ -24,8 +25,8 @@ const Filter = ({ onClick }: PropsType) => {
 
   return (
     <>
-      {/* To do : Créer un composant loader et un cas d'erreur */}
-      {fetching && <>Chargement ...</>}
+      {/* To do : Créer un cas d'erreur */}
+      {fetching && <Spinner />}
       {error && <>{error.message}</>}
       <FormControl fullWidth>
         <InputLabel>Thématique</InputLabel>

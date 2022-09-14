@@ -12,6 +12,10 @@ const StyleCompanies = styled.div`
     align-items: center;
     gap: 10px;
 
+    .no-search-result {
+      text-align: center;
+    }
+
     @media screen and (max-width: 700px) {
       width: 100%;
       padding: 0px 20px;

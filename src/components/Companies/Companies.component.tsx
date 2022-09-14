@@ -23,6 +23,16 @@ const Companies = () => {
     filter,
   });
 
+  const filterCompanies = (companies: any[]) =>
+    companies.filter(
+      (company) =>
+        themeParam == null ||
+        themeParam === "" ||
+        company.CompanyTag.map(
+          (companyTag: { tag: string }) => companyTag.tag
+        ).includes(themeParam)
+    );
+
   return (
     <>
       {/* To do : Créer un cas d'erreur */}
@@ -33,22 +43,18 @@ const Companies = () => {
           <div className="company-items">
             <h1>Entreprises</h1>
             <CompanyItemsTitle />
-            {companies
-              .filter(
-                (company) =>
-                  themeParam == null ||
-                  themeParam === "" ||
-                  company.CompanyTag.map(
-                    (companyTag: { tag: string }) => companyTag.tag
-                  ).includes(themeParam)
-              )
-              .map((company: any) => (
-                <CompanyItem
-                  keyName={company.keyName}
-                  company={company.name}
-                  characteristics={company.CompanyCharacteristic}
-                />
-              ))}
+            {filterCompanies(companies).length === 0 && (
+              <div className="no-search-result">
+                <div>Aucun résultat trouvé pour cette recherche</div>
+              </div>
+            )}
+            {filterCompanies(companies).map((company: any) => (
+              <CompanyItem
+                keyName={company.keyName}
+                company={company.name}
+                characteristics={company.CompanyCharacteristic}
+              />
+            ))}
           </div>
           <LateralMenu />
         </StyleCompanies>

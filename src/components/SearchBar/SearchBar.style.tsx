@@ -2,13 +2,14 @@ import styled from "styled-components";
 
 const StyleSearchBar = styled.div`
   display: flex;
+  margin-bottom: 20px;
 
-  & .MuiOutlinedInput-root {
+  .MuiOutlinedInput-root {
     border-radius: 6px 0px 0px 6px;
     background-color: #ffffff;
   }
 
-  & .MuiTextField-root {
+  .MuiTextField-root {
     width: 100%;
   }
 

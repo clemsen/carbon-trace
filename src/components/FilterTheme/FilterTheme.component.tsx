@@ -2,6 +2,7 @@ import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useSelect } from "react-supabase";
 import Spinner from "../Spinner";
+import { StyleFilterTheme } from "./FilterTheme.style";
 
 interface PropsType {
   onClick?: () => void;
@@ -28,17 +29,19 @@ const Filter = ({ onClick }: PropsType) => {
       {/* To do : Créer un cas d'erreur */}
       {fetching && <Spinner />}
       {error && <>{error.message}</>}
-      <FormControl fullWidth>
-        <InputLabel>Thématique</InputLabel>
-        <Select id="select-theme" onChange={handleChange}>
-          <MenuItem value="">
-            <em>Aucune</em>
-          </MenuItem>
-          {tags?.map((tag) => (
-            <MenuItem value={tag.tagKey}>{tag.tag}</MenuItem>
-          ))}
-        </Select>
-      </FormControl>
+      <StyleFilterTheme>
+        <FormControl fullWidth>
+          <InputLabel>Thématique</InputLabel>
+          <Select id="select-theme" onChange={handleChange}>
+            <MenuItem value="">
+              <em>Aucune</em>
+            </MenuItem>
+            {tags?.map((tag) => (
+              <MenuItem value={tag.tagKey}>{tag.tag}</MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+      </StyleFilterTheme>
     </>
   );
 };

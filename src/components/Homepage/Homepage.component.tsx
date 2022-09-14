@@ -1,3 +1,4 @@
+import FilterTheme from "../FilterTheme";
 import SearchBar from "../SearchBar";
 import StyleHomepage from "./Homepage.style";
 
@@ -11,6 +12,7 @@ const Homepage = () => {
       </p>
       <div className="homepage-search-bar">
         <SearchBar label="Rechercher une entreprise" />
+        <FilterTheme />
       </div>
     </StyleHomepage>
   );

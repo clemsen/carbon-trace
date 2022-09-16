@@ -11,7 +11,7 @@ const CompanyItem = ({ keyName, company, characteristics }: PropsType) => {
   const getItcValue = (characteristics: CompanyCharacteristicType[]) => {
     const itcCharacteristic =
       characteristics.filter(
-        (characteristic) => characteristic.characteristic === "itc"
+        (characteristic) => characteristic.characteristic === "co2-eur"
       )[0] || null;
 
     return itcCharacteristic && itcCharacteristic.value;

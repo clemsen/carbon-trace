@@ -9,13 +9,18 @@ interface PropsType {
 const CompanyInformation = ({ company }: PropsType) => {
   return (
     <StyleCompanyInformation className="company-information">
-      {company.CompanyCharacteristic.map((characteristic) => (
-        <InformationItem
-          itemName={characteristic.Characteristic.name}
-          itemValue={characteristic.value}
-          itemDescription={characteristic.Characteristic.description}
-        />
-      ))}
+      {company.CompanyCharacteristic.sort(
+        (charac1, charac2) =>
+          charac1.Characteristic.order - charac2.Characteristic.order
+      )
+        .filter((charcteristic) => charcteristic.Characteristic.isDisplayed)
+        .map((characteristic) => (
+          <InformationItem
+            itemName={characteristic.Characteristic.name}
+            itemValue={characteristic.value}
+            itemDescription={characteristic.Characteristic.description}
+          />
+        ))}
     </StyleCompanyInformation>
   );
 };

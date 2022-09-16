@@ -5,7 +5,6 @@ export type CompanyCharacteristicType = {
   value: string;
   startDate: string;
   endDate: string;
-  isDisplayed: boolean;
   Characteristic: CharacteristicType;
 };
 
@@ -22,4 +21,6 @@ export type CharacteristicType = {
   type: string;
   name: string;
   description?: string;
+  isDisplayed: boolean;
+  order: number;
 };

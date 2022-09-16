@@ -7,7 +7,7 @@ const CompanyItem = () => {
         Entreprise
       </div>
       <div className="company-item-information company-items-title">
-        Indice de Tracabilité Carbone
+        kg de CO2 par €
       </div>
     </StyleCompanyItem>
   );

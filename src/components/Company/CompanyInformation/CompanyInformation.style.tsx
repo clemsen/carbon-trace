@@ -15,8 +15,8 @@ const StyleCompanyInformation = styled.div`
   }
 
   .info-detail {
-    border: solid;
     border-radius: 5px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 16%);
     padding: 5px 20px 5px 20px;
     display: flex;
     flex-direction: column;

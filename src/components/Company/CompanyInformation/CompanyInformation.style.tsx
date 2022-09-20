@@ -45,6 +45,8 @@ const StyleCompanyInformation = styled.div`
 
   .info-value {
     min-width: max-content;
+    font-weight: bold;
+    text-align: right;
   }
 
   .info-good {
@@ -66,6 +68,7 @@ const StyleCompanyInformation = styled.div`
 
     .sub-info {
       font-size: 13px;
+      gap: 10px;
     }
   }
 `;
